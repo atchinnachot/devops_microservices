@@ -10,7 +10,9 @@ This API uses Flask framework and a given pre-trained, `sklearn` model that has 
 ## Setup the Environment to run `app.py`
 
 
+
 ### Standalone:  `python app.py`
+
 
 1. Clone the project repository, and navigate to the project folder.
 
@@ -29,6 +31,7 @@ source ~/.devops/bin/activate
 3. Install dependencies. `make install`
 
 
+
 ### Run in the Docker
 
 1. Make sure the docker is running, use `docker --version` to verify if the docker is installed. Otherwise, To install the latest version of docker, choose the Community Edition (CE) for your operating system, [on docker’s installation site](https://docs.docker.com/v17.12/install/). It is also recommended that you install the latest, **stable** release:
@@ -36,10 +39,13 @@ source ~/.devops/bin/activate
 2. To run API in Docker:  `./run_docker.sh`
 
 
+
 ### Run in Kubernetes:
+
 
 **Install Minikube**
 To run a Kubernetes cluster locally, for testing and project purposes, you need the Kubernetes package, Minikube. This operates in a virtual machine and so you'll need to download two things: A virtual machine (aka a hypervisor) then minikube. Thorough installation instructions can be found here. Here is how I installed minikube:
+
 
 1. Install VirtualBox:
 
@@ -58,6 +64,7 @@ brew cask install minikube
 ```
 
 3. To run API in Kubernetes: `./run_kubernetes.sh`
+
 
 
 ## Making Predictions
