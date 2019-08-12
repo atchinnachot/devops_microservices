@@ -10,8 +10,8 @@ dockerpath=atchinnachot/devops
 
 # Step 2:  
 # Authenticate & tag
-echo "Docker ID and Image: $dockerpath"
+echo "Docker ID and Image: ${dockerpath}"
 
 # Step 3:
 # Push image to a docker repository
-docker push $dockerpath:ml-prediction1
+docker push ${dockerpath}:ml-prediction1
