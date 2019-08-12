@@ -1,14 +1,14 @@
 FROM python:3.7.3-stretch
 
 # hadolint ignore=DL3008
-RUN apt-get update && apt-get install -y \
-    python-pip \
-    python-dev \
-    vim \
-    curl \
-    net-tools --no-install-recommends \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && apt-get install -y \
+#     python-pip \
+#     python-dev \
+#     vim \
+#     curl \
+#     net-tools --no-install-recommends \
+#     && apt-get clean \
+#     && rm -rf /var/lib/apt/lists/*
 
 ## Step 1:
 # Create a working directory
@@ -35,4 +35,4 @@ EXPOSE 80
 ## Step 5:
 # Run app.py at container launch
 # ENV [ "python" ]
-CMD [ "python", "app.py"]
+CMD ["python", "app.py"]
