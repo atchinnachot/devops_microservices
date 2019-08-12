@@ -36,7 +36,9 @@ source ~/.devops/bin/activate
 
 1. Make sure the docker is running, use `docker --version` to verify if the docker is installed. Otherwise, To install the latest version of docker, choose the Community Edition (CE) for your operating system, [on docker’s installation site](https://docs.docker.com/v17.12/install/). It is also recommended that you install the latest, **stable** release:
 
-2. To run API in Docker:  `./run_docker.sh`
+2. Create Docker Hub's password file:  `cat > ~/.my_password.txt`
+
+3. To run API in Docker:  `./run_docker.sh`
 
 
 
