@@ -2,41 +2,64 @@
 
 ## Project Overview
 
-In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
+This project provides three ways to operationalize a Machine Learning Microservice API. The standalone, and the containerized both in Docker, and Kerbernetes.
 
-You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
+This API uses Flask framework and a given pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. The data was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing).
 
-### Project Tasks
 
-Your project goal is to operationalize this working, machine learning microservice using [kubernetes](https://kubernetes.io/), which is an open-source system for automating the management of containerized applications. In this project you will:
-* Test your project code using linting
-* Complete a Dockerfile to containerize this application
-* Deploy your containerized application using Docker and make a prediction
-* Improve the log statements in the source code for this application
-* Configure Kubernetes and create a Kubernetes cluster
-* Deploy a container using Kubernetes and make a prediction
-* Upload a complete Github repo with CircleCI to indicate that your code has been tested
+## Setup the Environment to run `app.py`
 
-You can find a detailed [project rubric, here](https://review.udacity.com/#!/rubrics/2576/view).
 
-**The final implementation of the project will showcase your abilities to operationalize production microservices.**
+### Standalone:  `python app.py`
 
----
+1. Clone the project repository, and navigate to the project folder.
 
-## Setup the Environment
+```
+git clone https://github.com/atchinnachot/devops_microservices.git
+cd devops_microservices
+```
 
-* Create a virtualenv and activate it
-* Run `make install` to install the necessary dependencies
+2. Create (and activate) a new environment, named `.devops` with Python 3. If prompted to proceed with the install `(Proceed [y]/n)` type y.
 
-### Running `app.py`
+```
+python3 -m venv ~/.devops
+source ~/.devops/bin/activate
+```
 
-1. Standalone:  `python app.py`
-2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
+3. Install dependencies. `make install`
 
-### Kubernetes Steps
 
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
-* Run via kubectl
+### Run in the Docker
+
+1. Make sure the docker is running, use `docker --version` to verify if the docker is installed. Otherwise, To install the latest version of docker, choose the Community Edition (CE) for your operating system, [on docker’s installation site](https://docs.docker.com/v17.12/install/). It is also recommended that you install the latest, **stable** release:
+
+2. To run API in Docker:  `./run_docker.sh`
+
+
+### Run in Kubernetes:
+
+**Install Minikube**
+To run a Kubernetes cluster locally, for testing and project purposes, you need the Kubernetes package, Minikube. This operates in a virtual machine and so you'll need to download two things: A virtual machine (aka a hypervisor) then minikube. Thorough installation instructions can be found here. Here is how I installed minikube:
+
+1. Install VirtualBox:
+
+**For Mac:**
+
+```
+brew cask install virtualbox
+```
+
+2. Install minikube:
+
+**For Mac:**
+
+```
+brew cask install minikube
+```
+
+3. To run API in Kubernetes: `./run_kubernetes.sh`
+
+
+## Making Predictions
+
+To make a prediction, open a **separate tab or termal window**. In this new window, navigate to the main project directory (some computers will do this automatically) and call `./make_prediction.sh`.
