@@ -1,3 +1,5 @@
+### Output from ./run_kubernetes.sh terminal
+
 NAME                                   READY     STATUS    RESTARTS   AGE
 kube-prediction-app-7968cb8c77-86rfz   1/1       Running   0          26s
 Forwarding from 127.0.0.1:8000 -> 80
@@ -6,4 +8,20 @@ Forwarding from [::1]:8000 -> 80
 
 Handling connection for 8000
 Handling connection for 8000
-Handling connection for 8000
+
+
+### Output when run ./make_prediction.sh
+
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) achinnachot@ats-MacPro project-ml-microservice-kubernetes -> ./make_prediction.sh 
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}

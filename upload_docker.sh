@@ -11,7 +11,7 @@ dockerpath=atchinnachot/devops
 # Step 2:  
 # Authenticate & tag
 cat ~/.my_password.txt | docker login --username atchinnachot --password-stdin
-docker tag <ID_XXXXXXX> ${dockerpath}:ml-prediction1
+docker tag 8422a9990d6d ${dockerpath}:ml-prediction1
 echo "Docker ID and Image: ${dockerpath}"
 
 # Step 3:
